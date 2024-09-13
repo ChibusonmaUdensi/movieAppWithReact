@@ -4,10 +4,9 @@ import Layout from "../layout/Layout";
 // import SignUp from "../app/auth/SignUp";
 // import Login from "../app/auth/Login";
 import PopularMovie from "../component/PopularMovie";
-
 const ROUTES = [
     {
-        path: '',
+        path: '/',
         element: <Layout/>,
         children: [
             {

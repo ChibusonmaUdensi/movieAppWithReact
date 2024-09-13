@@ -5,19 +5,21 @@ const apiKey = process.env.REACT_APP_API_KEY
 console.log(baseUrl )
 console.log(apiKey)
 
-//https://api.themoviedb.org/3/movie/popular?api_key=717ccf6765dcaa577801cadcc372f394
-
 export const movieApi = createApi({
-    reducerPath: "movie",
-    baseQuery: fetchBaseQuery({baseUrl: `${baseUrl}`}),
-    endpoints: (builder)=>({
-        useGetAllPopularMoviesQuery:builder.query,
-        getAllNowPlayingMovies: builder.query({
-            query: ()=>(`/now_playing?api_key=${apiKey}`),
-        }),
+    reducerPath: 'movie', // This should match with how you set up your store
+    baseQuery: fetchBaseQuery({ baseUrl }),
+    endpoints: (builder) => ({
+      getAllPopularMovies: builder.query({
+        query: () => `/popular?api_key=${apiKey}`,
+      }),
+      getAllNowPlayingMovies: builder.query({
+        query: () => `/now_playing?api_key=${apiKey}`,
+      }),
     }),
-});
+  });
+  
 
 
 
 export const {useGetAllNowPlayingMoviesQuery, useGetAllPopularMoviesQuery} = movieApi;
+

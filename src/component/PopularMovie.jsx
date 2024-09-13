@@ -1,13 +1,15 @@
 import React from 'react'
-import { useGetAllPopularMoviesQuery } from '../Service/api'
+import {movieApi}  from '../Service/api'
 import style from "./nowPlayingMovie.module.css"
-
+import { useGetAllPopularMoviesQuery } from '../Service/api'; 
 const img = process.env.REACT_APP_MOVIE_IMAGES
 
 const PopularMovie = () => {
+    const {useGetAllPopularMoviesQuery} = movieApi
+
     const {data, isLoading, isError} = useGetAllPopularMoviesQuery();
     console.log(data)
-    console.log(isLoading)
+    // console.log(isLoading)
 
     if(isLoading){
         return <div><h1>Loading...</h1></div>
@@ -18,7 +20,7 @@ const PopularMovie = () => {
     return (
         <div className= {style.mainWrapper}>
             <div className={style.container}>
-            {data?.popular?.map((movie) =>(
+            {data?.results?.map((movie) =>(
                 <div className={style.movie} key={movie.id}>
                     <img className={style.img} src={`${img}${movie.poster_path}`} alt={movie.overview}></img>
                     <div>

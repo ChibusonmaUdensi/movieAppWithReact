@@ -1,10 +1,11 @@
 import React from 'react'
-import { useGetAllNowPlayingMoviesQuery } from '../Service/api'
+import { movieApi}  from '../Service/api'
 import style from "./nowPlayingMovie.module.css"
 
 const img = process.env.REACT_APP_MOVIE_IMAGES
 
 const NowPlayingMovie = () => {
+    const {useGetAllNowPlayingMoviesQuery} = movieApi
     const {data, isLoading, isError} = useGetAllNowPlayingMoviesQuery();
     console.log(data)
     console.log(isLoading)
