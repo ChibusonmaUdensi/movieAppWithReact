@@ -1,4 +1,3 @@
-// src/Login.js
 import React, { useState } from 'react';
 
 const Login = () => {
@@ -47,7 +46,7 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (validateForm()) {
-            // Handle form submission
+  
             console.log('Form data:', formData);
         }
     };
@@ -80,6 +79,7 @@ const Login = () => {
             color: 'red',
             fontSize: '0.875em',
         },
+
         button: {
             display: 'block',
             width: '100%',

@@ -1,4 +1,3 @@
-// src/SignUp.js
 import React, { useState } from 'react';
 
 const SignUp = () => {
@@ -54,7 +53,6 @@ const SignUp = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (validateForm()) {
-            // Handle form submission
             console.log('Form data:', formData);
         }
     };
